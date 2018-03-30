@@ -6,3 +6,7 @@ from django.http import HttpResponse
 class MapPageView(TemplateView):
     def get(self, request, **kwargs):
         return render(request, 'projects.html', context=None)
+
+class BaseMapPageView(TemplateView):
+    def get(self, request, **kwargs):
+        return render(request, 'map.html', context=None)

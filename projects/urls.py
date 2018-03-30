@@ -5,4 +5,5 @@ from . import views
 
 urlpatterns = [
     path('map/', views.MapPageView.as_view()),
+    path('basemap/', views.BaseMapPageView.as_view()),
 ]
