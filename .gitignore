@@ -1,4 +1,6 @@
 .idea/
 venv/
+conf/
 
 db.sqlite3
+OrganicSage/wsgi.py
