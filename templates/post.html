@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div style="padding-top: 60px; width: 70%; margin:0 auto; color:#0d0b16;">
+
+        <h1 class="display-3">{{ post.title }}</h1>
+        {% if post.published_date %}
+            <div class="date" style="font-style: oblique;">
+                {{ post.published_date }}
+            </div>
+        {% endif %}
+        <p style="padding-top: 10px;">
+            <image src={{ post.image_src }} class="rounded float-left" style="padding-right:5px; height:230px;">
+            {{ post.text|linebreaksbr }}
+        </p>
+    </div>
+{% endblock %}
