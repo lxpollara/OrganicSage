@@ -2,15 +2,18 @@
 
 
 {% block content %}
-<div style="padding-top: 60px;">
+<div style="padding-top: 60px; ">
     {% for post in posts %}
-        <div style=" height:250px; background-color:#f9d908;border-radius:12px; margin-bottom:5px;  margin-right:0px; margin-left:0px;padding: 10px;overflow: auto;">
-            <a href="{% url 'post' pk=post.pk %}" style="color: #0d0b16">
-            <image src={{ post.image_src }} class="rounded float-left" style="padding-right:5px; height:230px;">
+        <div style=" overflow:hidden;  height:250px; background-color:#f9d908;border-radius:12px; margin-bottom:5px;  margin-right:0px; margin-left:0px;padding: 10px;">
 
-                <h1> {{ post }} </h1>
-                <p style="height:62%; width:60%; overflow:hidden;text-overflow: ellipsis;"> {{ post.text }} </p>
+            <a href="{% url 'post' pk=post.pk %}" style="color: #0d0b16">
+                <image src={{ post.image_src }} class="rounded float-left" style="padding-right:5px; height:100%; max-width:40%;">
+                <h1> {{ post }}</h1>
+                <div class="container">
+                    <p class="lead"> {{ post.text }} </p>
+                </div>
             </a>
+
         </div>
     {% endfor %}
 </div>

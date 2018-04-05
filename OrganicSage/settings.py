@@ -127,3 +127,8 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+
+# TODO implement https
+# TODO build in visitor log system
+# TODO SEO
+# TODO DNS (Take it live)
