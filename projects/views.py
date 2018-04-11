@@ -15,3 +15,5 @@ class BaseMapPageView(TemplateView):
         proj = ProjectLoc.objects.all()
         map_gen(proj)
         return render(request, 'map.html', context=None)
+
+#TODO make mapmaker output html dirtectly into posts

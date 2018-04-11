@@ -15,5 +15,5 @@ def map_gen(projects):
 
         popup = folium.Popup('<a href= "/blog/post/{}", target="_parent" > {} </a>'.format(location.blog_post, location.name), max_width=2650)
         folium.RegularPolygonMarker([location.latitude, location.longitude], popup=popup, color=color, fill_color=color, radius=5).add_to(map_osm)
-
+    # TODO got to figure out how best to manage directories on the bitnami distro current solution is hacky cancer
     map_osm.save(os.path.join(os.path.abspath(''), 'templates/map.html'))

@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'blog',
     'projects',
+    'homepage'
+
 
 ]
 
@@ -129,6 +131,6 @@ STATICFILES_DIRS = [
 ]
 
 # TODO implement https
-# TODO build in visitor log system
+# TODO build in visitor log system https://github.com/praekelt/django-google-analytics
 # TODO SEO
 # TODO DNS (Take it live)
