@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
 from django.http import HttpResponse
-from .models import Qualifications
+from .models import Qualifications, Services
 
 
 # Create your views here.
@@ -17,7 +17,8 @@ class BioPageView(TemplateView):
 
 class ServicesPageView(TemplateView):
     def get(self, request, **kwargs):
-        return render(request, 'services.html', context=None)
+        services = Services.objects.order_by('published_date')
+        return render(request, 'services.html', {'services': services})
 
 
 class ContactPageView(TemplateView):

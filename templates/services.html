@@ -11,79 +11,26 @@
 </div>
 <div style="margin-left:0px; background-color:#F3FC9F;">
 <!-- accordion -->
+    {% for service in services %}
     <div class="panel-group" id="accordion" style="margin-left:0px; background-color:#F3FC9F;" >
         <!-- item in the accordion  -->
         <div class="panel panel-default">
             <div class="panel-heading">
-                <button class="btn btn-block text-left" style=" margin:5px; border-radius:12px; background-color:#67aeff; border-color:#F3FC9F; color:#0d0b16;" data-toggle="collapse" data-parent="#accordion" href="#collapse1">
-                ↓ Farm Operations
+                <button class="btn btn-block text-left" style=" margin:5px; border-radius:12px; background-color:#67aeff; border-color:#F3FC9F; color:#0d0b16;" data-toggle="collapse" data-parent="#accordion" href="#collapse{{forloop.counter}}">
+                ↓ {{ service.name }}
                 </button>
             </div>
-            <div id="collapse1" class="panel-collapse collapse">
+            <div id="collapse{{forloop.counter}}" class="panel-collapse collapse">
                 <div class="panel-body" style="background-color: #F3FC9F; margin-left:10px;">
                     <ul class="lead">
-                        <li>Farm development planning, old, and new</li>
-                        <li> Animal husbandry: dairy, meat (beef, swine, goat, sheep, equine, exotic) draft, companion</li>
-                        <li>Poultry management: layers, broilers, turkeys, geese, guinea fowl, ducks</li>
-                        <li>Farm design: (fields, structures, operations) and biodiversity</li>
-                        <li>Farm operations and systems implementation</li>
-                        <li>Market identification and development</li>
-                        <li>Product development: (live, processed, single ingredient, multiple ingredient, dried, frozen, fresh, milled, cooked, hot sealed, liquid and more)</li>
-                        <li>Food safety and HACCP plan development</li>
-                        <li>Farm safety</li>
-                        <li>Succession planning</li>
+                        {% for item in service.description_items %}
+                            <li> {{ item }}</li>
+                        {% endfor %}
                     </ul>
                 </div>
             </div>
         </div>
     </div>
-    <div class="panel-group" id="accordion" style="margin-left:0px; background-color: #F3FC9F;" >
-        <!-- item in the accordion  -->
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <button class="btn btn-info btn-block text-left" style=" margin:5px; border-radius:12px; background-color:#67aeff; border-color:#F3FC9F; color:#0d0b16;" data-toggle="collapse" data-parent="#accordion" href="#collapse2">
-                ↓ Certification Compliance
-                </button>
-            </div>
-            <div id="collapse2" class="panel-collapse collapse">
-                <div class="panel-body" style="background-color: #F3FC9F; margin-left:10px;">
-                    <ul class="lead">
-                        <li>Organic to USDA NOP all scopes</li>
-                        <li>Non-GMO Project and/or EU NonGMO all scopes</li>
-                        <li>Humane Farm Animal Care-Certified Humane all eligible species</li>
-                        <li>Global Organic Textiles </li>
-                        <li>Social Accountability International</li>
-                        <li>HACCP</li>
-                        <li>Best Management Practices</li>
-                        <li>LEAN approach tailored to your operations</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="panel-group" id="accordion" style="margin-left:0px; background-color: #F3FC9F;" >
-        <!-- item in the accordion  -->
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <button class="btn btn-info btn-block text-left" style=" margin:5px; border-radius:12px; background-color:#67aeff; border-color:#F3FC9F; color:#0d0b16;" data-toggle="collapse" data-parent="#accordion" href="#collapse3">
-                ↓ Inspections
-                </button>
-            </div>
-            <div id="collapse3" class="panel-collapse collapse">
-                <div class="panel-body" style="background-color: #F3FC9F; margin-left:10px;">
-                    <ul class="lead">
-                        <li>Organic to USDA NOP all scopes</li>
-                        <li>Non-GMO Project and/or EU NonGMO all scopes</li>
-                        <li>Humane Farm Animal Care-Certified Humane all eligible species</li>
-                        <li>Global Organic Textiles </li>
-                        <li>Social Accountability International</li>
-                        <li>HACCP</li>
-                        <li>Best Management Practices</li>
-                        <li>LEAN approach tailored to your operations</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
+    {% endfor %}
 </div>
 {% endblock %}
